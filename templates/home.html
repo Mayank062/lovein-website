@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple HTML HomePage</title>
+  <title>Lambajio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
@@ -196,14 +196,7 @@
 </head>
 
 <body>
-  <header class="header">
-    <a href="#" class="logo">Developer</a>
-    <nav class="nav-items">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  {% include 'header.html' %}
   <main>
     <div class="intro">
       <h1>A Web Developer</h1>
@@ -237,9 +230,12 @@
 
 <div>
   {% for j in job %}
-  <div class='border-bottom' style='margin-bottom:16px; padding-bottom:8px;'>
-    <h4 style= 'color:rbg(120,120,120); margin-bottom:4px;'>{{j['title']}}</h4>
+  <div>
+    <h3 class= 'col-1 padding right:16px' style= 'color:rbg(120,120,120); margin-bottom:8px;'>{{j['title']}}</h3>
   </div>
+<div class= 'col-2 padding right:16px'>
+  <a href="mailto:mayanktanwar062@gmail.com?subject=Request for Job {{j['title']}}">Apply</a>
+</div>
   <div>
     <b>Location:</b> {{j['location']}}
   </div>
@@ -247,26 +243,10 @@
     <b>Salary:</b> {{j['Salary']}}
   </div>
   {% endfor %}
+
 </div>
-    
+
   </main>
-  <footer class="footer">
-    <div class="copy">&copy; 2022 Developer</div>
-    <div class="bottom-links">
-      <div class="links">
-        <span>More Info</span>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="links">
-        <span>Social Links</span>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
-</body>
+  {% include 'footer.html' %}
 
 </html>
