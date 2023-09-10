@@ -192,6 +192,7 @@
       color: #a1a1a1;
       padding: 10px 20px;
     }
+    
   </style>
 </head>
 
@@ -227,26 +228,12 @@
       </div>
       <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="me">
     </div>
+</main>
 
-<div>
+<div class= "container">
   {% for j in job %}
-  <div>
-    <h3 class= 'col-1 padding right:16px' style= 'color:rbg(120,120,120); margin-bottom:8px;'>{{j['title']}}</h3>
-  </div>
-<div class= 'col-2 padding right:16px'>
-  <a href="mailto:mayanktanwar062@gmail.com?subject=Request for Job {{j['title']}}">Apply</a>
-</div>
-  <div>
-    <b>Location:</b> {{j['location']}}
-  </div>
-  <div>
-    <b>Salary:</b> {{j['Salary']}}
-  </div>
+   {% include 'code.html' %}
   {% endfor %}
-
-</div>
-
-  </main>
+</div>  
   {% include 'footer.html' %}
-
 </html>
